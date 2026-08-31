@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Business Card</title>
-    <!-- Font Awesome Icons -->
+    <title>Digital Business Card - Al-Ahram Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-green: #10b981;
-            --accent-blue: #3b82f6;
-            --radius: 16px;
+            --bg-color: #f7f5f0;
+            --card-bg: #ffffff;
+            --border-color: #e2d7c3;
+            --text-primary: #2a241e;
+            --text-secondary: #6e6557;
+            --gold-primary: #c29235;
+            --gold-dark: #8a611c;
+            --gold-light: #f4ece1;
+            --radius: 12px;
         }
 
         * {
@@ -34,116 +34,130 @@
             align-items: center;
             padding: 20px 16px;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(194, 146, 53, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(138, 97, 28, 0.1) 0px, transparent 50%);
         }
 
         .vcard-container {
             width: 100%;
             max-width: 400px;
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 28px 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 12px 30px rgba(138, 97, 28, 0.12);
         }
 
-        /* Profile Header */
+        /* Company Logo Header */
+        .company-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .company-logo {
+            max-width: 190px;
+            height: auto;
+            margin: 0 auto 4px auto;
+            display: block;
+        }
+
+        /* Profile Section */
         .profile {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .avatar {
-            width: 96px;
-            height: 96px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-blue);
-            margin-bottom: 12px;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+            border: 3px solid var(--gold-primary);
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(194, 146, 53, 0.2);
         }
 
         .name {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 4px;
         }
 
         .title {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        .company {
-            font-size: 0.85rem;
-            color: var(--accent-blue);
-            font-weight: 600;
+        /* Primary Call to Action Buttons */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
-        /* Primary Action Button */
-        .btn-primary {
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--accent-blue), #2563eb);
-            color: #fff;
+            padding: 13px;
             border: none;
             border-radius: var(--radius);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            margin-bottom: 20px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
-        .btn-primary:active {
+        .btn:active {
             transform: scale(0.98);
         }
 
-        /* Grid Action Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(138, 97, 28, 0.25);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: var(--gold-dark);
+            border: 2px solid var(--gold-primary);
+        }
+
+        /* Direct Contact Grid */
         .action-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .action-card {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 14px;
-            background: rgba(255, 255, 255, 0.05);
+            gap: 10px;
+            padding: 12px;
+            background: var(--gold-light);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             color: var(--text-primary);
             text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .action-card:hover {
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .action-icon {
-            font-size: 1.2rem;
-            width: 24px;
+            font-size: 1.1rem;
+            width: 22px;
             text-align: center;
+            color: var(--gold-dark);
         }
-
-        .whatsapp .action-icon { color: var(--accent-green); }
-        .phone .action-icon { color: var(--accent-blue); }
-        .email .action-icon { color: #f59e0b; }
-        .location .action-icon { color: #ef4444; }
 
         .action-text {
             display: flex;
@@ -151,74 +165,56 @@
         }
 
         .action-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-secondary);
         }
 
         .action-val {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-        }
-
-        /* Section Headings */
-        .section-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        /* Social Links & Footer */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
             color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.1rem;
         }
 
+        /* Footer */
         .footer-note {
             text-align: center;
             font-size: 0.75rem;
             color: var(--text-secondary);
             border-top: 1px solid var(--border-color);
-            padding-top: 16px;
+            padding-top: 14px;
         }
     </style>
 </head>
 <body>
 
     <div class="vcard-container">
-        <!-- Profile Section -->
-        <div class="profile">
-            <img src="https://ahramplastic.com/wp-content/uploads/2024/01/93454747-768x576.png" alt="Profile Picture" class="avatar">
-            <h1 class="name">Dr.Maged Halim</h1>
-            <p class="title">CEO & CO Foundr</p>
-            <p class="company">Al-Ahram plastic group</p>
+        
+        <div class="company-header">
+            <img src="https://ahramplastic.com/wp-content/uploads/2023/02/logo-7.png" alt="Al-Ahram Group Logo" class="company-logo">
         </div>
 
-        <!-- Primary CTA: Instant VCF Download -->
-        <button class="btn-primary" onclick="downloadVCard()">
-            <i class="fa-solid fa-user-plus"></i> Save Contact
-        </button>
+        <div class="profile">
+            <img src="https://ahramplastic.com/wp-content/uploads/2024/01/93454747-768x576.png" alt="Dr. Maged Halim" class="avatar">
+            <h1 class="name">Dr. Maged Halim</h1>
+            <p class="title">Chairman</p>
+        </div>
 
-        <!-- Quick Contact Grid -->
+        <div class="btn-group">
+            <a href="https://ahramplastic.com/" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-globe"></i> Visit Official Website
+            </a>
+
+            <a href="https://ahramplastic.com/wp-content/uploads/2025/12/%D9%83%D8%AA%D8%A7%D9%84%D9%88%D8%AC-%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%A3%D9%87%D8%B1%D8%A7%D9%85-%D9%84%D8%AA%D8%B5%D9%8A%D9%86%D8%B9-%D8%A7%D9%84%D8%A8%D9%84%D8%A7%D8%B3%D8%AA%D9%8A%D9%83-%D8%B4.%D9%85.%D9%85.pdf" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-file-pdf"></i> View Product Catalog
+            </a>
+
+            <button class="btn btn-primary" onclick="downloadVCard()">
+                <i class="fa-solid fa-user-plus"></i> Save Contact
+            </button>
+        </div>
+
         <div class="action-grid">
-            <a href="https://wa.me/+201275377702?text=Hi,%20I'd%20like%20to%20inquire%20about%20your%20products." class="action-card whatsapp" target="_blank">
+            <a href="https://wa.me/201275377702?text=Hi,%20I'd%20like%20to%20inquire%20about%20Al-Ahram%20packaging%20products." class="action-card" target="_blank">
                 <i class="fa-brands fa-whatsapp action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">WhatsApp</span>
@@ -226,7 +222,7 @@
                 </div>
             </a>
 
-            <a href="tel:+201275377702" class="action-card phone">
+            <a href="tel:+201275377702" class="action-card">
                 <i class="fa-solid fa-phone action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">Call</span>
@@ -234,7 +230,7 @@
                 </div>
             </a>
 
-            <a href="mailto:maged.halim@ahramplastic.com" class="action-card email">
+            <a href="mailto:maged.halim@ahramplastic.com" class="action-card">
                 <i class="fa-solid fa-envelope action-icon"></i>
                 <div class="action-text">
                     <span class="action-label">Email</span>
@@ -242,38 +238,28 @@
                 </div>
             </a>
 
-            <a href="https://ahramplastic.com/" class="action-card location" target="_blank">
-                <i class="fa-solid fa-globe action-icon"></i>
+            <a href="https://www.facebook.com/ahramplasticgroup" class="action-card" target="_blank">
+                <i class="fa-brands fa-facebook-f action-icon"></i>
                 <div class="action-text">
-                    <span class="action-label">Website</span>
-                    <span class="action-val">Visit Site</span>
+                    <span class="action-label">Facebook</span>
+                    <span class="action-val">Visit Page</span>
                 </div>
             </a>
         </div>
 
-        <!-- Social Media -->
-        <div class="section-title" style="text-align: center;">Connect Online</div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/company/al-ahram-plastic-co-/home/" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://web.facebook.com/ahramplasticgroup" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        </div>
-
-        <!-- Footer -->
         <div class="footer-note">
-            Tap NFC or scan QR to share this card
+            Al-Ahram Group — Industrial Packaging Solutions
         </div>
     </div>
 
-    <!-- Dynamic VCF Generation Script -->
     <script>
         function downloadVCard() {
-            // Edit your details here
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:DR.Maged Halim
-TITLE:CEO & Co founder
-ORG:Al-Ahram plastic group
+N:Halim;Maged;Dr.;;
+FN:Dr. Maged Halim
+TITLE:Chairman
+ORG:Al-Ahram Group
 TEL;TYPE=CELL:+201275377702
 EMAIL:maged.halim@ahramplastic.com
 URL:https://ahramplastic.com/
@@ -283,7 +269,7 @@ END:VCARD`;
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'contact.vcf');
+            link.setAttribute('download', 'Dr_Maged_Halim_Contact.vcf');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
